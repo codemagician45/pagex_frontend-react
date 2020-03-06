@@ -11,8 +11,9 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.get('/ping', function (req, res) {
  return res.send('pong');
 });
+console.log(path.join(__dirname, 'build', 'index.html'));
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-console.log("Server for reactJs started listening on http://locatlhost:80 !")
+console.log("Server for reactJs started listening on http://locatlhost:"+port+"!")
 app.listen(port);
