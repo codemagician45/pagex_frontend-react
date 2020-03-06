@@ -1,4 +1,5 @@
 data/
+build/
 *.swp
 *.vim
 commit_msg_template
