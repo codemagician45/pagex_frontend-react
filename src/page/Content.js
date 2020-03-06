@@ -12,7 +12,6 @@ import PromotePost from "../components/modal/PromotePost";
 import brian from "../image/brian.png";
 import clara from "../image/clara.png";
 import mark from "../image/mark.png";
-import sean from "../image/sean.png";
 
 import back1 from "../image/back1.png";
 import back2 from "../image/back2.png";
@@ -300,7 +299,7 @@ class Content extends Component {
 
   render() {
     const target = this.props.match.params.article;
-    const found = this.state.cote.find(element => element.id == target);
+    const found = this.state.cote.find(element => element.id === target);
 
     let showReactPost;
     if (this.state.showReact) {
