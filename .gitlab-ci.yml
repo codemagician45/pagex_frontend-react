@@ -1,0 +1,35 @@
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - deploy
+
+#deploy_dev:
+#    stage: deploy
+#    when: manual
+#    only:
+#        - develop
+#    script:
+#        - DEV_HOME="/usr/share/nginx/dev.notifia.io";
+#        - if [ ! -d $DEV_HOME ]; then exit 1; fi
+#        - PATH=${PATH}:/usr/local/bin
+#        - npm install
+#        - npm run dev-build
+#        - ls dist/*
+#        - pwd
+#        - rsync -arp  --exclude-from='.rsync_excludes' . ${DEV_HOME}
+#        - pm2 restart web
+
+deploy_prod:
+    stage: deploy
+    only:
+        - master
+    script:
+        - DEV_HOME="/var/www/pagex_web/";
+        - PATH=${PATH}:/usr/local/bin
+        - if [ ! -d $DEV_HOME ]; then exit 1; fi
+        - npm install
+        - npm run build
+        - rsync -arp  --exclude-from='.rsync_excludes' . ${DEV_HOME}
+        - sh /var/www/rsync/web.sh
