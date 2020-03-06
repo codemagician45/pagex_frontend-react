@@ -29,6 +29,8 @@ deploy_prod:
         - DEV_HOME="/var/www/pagex_web/";
         - PATH=${PATH}:/usr/local/bin
         - if [ ! -d $DEV_HOME ]; then exit 1; fi
+        - cp ${DEV_HOME}/.env .env
+        - cat .env
         - npm install
         - npm run build
         - rsync -arp  --exclude-from='.rsync_excludes' . ${DEV_HOME}
