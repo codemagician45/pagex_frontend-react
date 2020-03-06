@@ -87,7 +87,7 @@ class Login extends Component {
   componentWillReceiveProps(nextProps) {
     console.log("nextProps.loginUser :", nextProps, nextProps.loginUser.code)
 
-    if (nextProps.loginUser != undefined) {
+    if (nextProps.loginUser !==undefined) {
       if (nextProps.loginUser && nextProps.loginUser.data && nextProps.loginUser.code === 200) {
         // customNotification.fireNotification("success", "LogedIn")
         // @TODO PUSH LOCATION IN HISTORY

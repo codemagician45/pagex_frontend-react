@@ -90,10 +90,9 @@ class StepThree extends Component {
             value="Next"
           />
           <input
-            className="btn-next"
+            className="btn-next hidenField"
             type="button"
             id="next"
-            className="hidenField"
             value="Next"
             onClick={this.props.next}
           />

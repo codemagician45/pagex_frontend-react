@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
-import { connect, useDispatch, useSelector } from "react-redux";
+import React  from 'react';
+import { connect } from "react-redux";
 import { push } from "react-router-redux";
 import { getData } from '../store/actions/GetDataAction/GetDataAction';
 

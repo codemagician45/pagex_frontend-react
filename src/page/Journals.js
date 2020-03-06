@@ -12,7 +12,6 @@ import CardProfile from "../components/card/CardProfile";
 import brian from "../image/brian.png";
 import clara from "../image/clara.png";
 import mark from "../image/mark.png";
-import sean from "../image/sean.png";
 
 import back1 from "../image/back1.png";
 import back2 from "../image/back2.png";

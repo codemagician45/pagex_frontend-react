@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { push } from "react-router-redux";
-import { Link } from "react-router-dom";
 import { codeValidateAction } from '../../store/actions/SignupAction/CodeValidationAction';
 
 const customNotification = require('../../Utils/notification');
@@ -71,7 +70,7 @@ class StepTwo extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.codeIsValid != undefined) {
+    if (nextProps.codeIsValid !== undefined) {
       if (nextProps.codeIsValid && nextProps.codeIsValid.data && nextProps.codeIsValid.code === 200) {
         setTimeout(() => {
           
